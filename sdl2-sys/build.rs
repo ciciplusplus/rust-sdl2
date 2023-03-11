@@ -272,7 +272,6 @@ fn link_sdl2(target_os: &str) {
             println!("cargo:rustc-link-lib=dl");
             println!("cargo:rustc-link-lib=GLESv1_CM");
             println!("cargo:rustc-link-lib=GLESv2");
-            println!("cargo:rustc-link-lib=hidapi");
             println!("cargo:rustc-link-lib=log");
             println!("cargo:rustc-link-lib=OpenSLES");
         } else {
@@ -509,11 +508,7 @@ fn main() {
 
     link_sdl2(target_os);
 
-    // Android builds shared libhidapi.so even for static builds.
-    #[cfg(all(
-        feature = "bundled",
-        any(not(feature = "static-link"), target_os = "android")
-    ))]
+    #[cfg(all(feature = "bundled", not(feature = "static-link")))]
     {
         copy_dynamic_libraries(&sdl2_compiled_path, target_os);
     }
