@@ -30071,3 +30071,229 @@ fn bindgen_test_layout___va_list() {
     );
 }
 pub type __uint128_t = u128;
+
+
+extern "C" {
+    pub fn Android_JNI_SetActivityTitle(title: *const libc::c_char);
+}
+extern "C" {
+    pub fn Android_JNI_SetWindowStyle(fullscreen: SDL_bool);
+}
+extern "C" {
+    pub fn Android_JNI_SetOrientation(
+        w: libc::c_int,
+        h: libc::c_int,
+        resizable: libc::c_int,
+        hint: *const libc::c_char,
+    );
+}
+extern "C" {
+    pub fn Android_JNI_MinizeWindow();
+}
+extern "C" {
+    pub fn Android_JNI_ShouldMinimizeOnFocusLoss() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_GetAccelerometerValues(values: *mut f32) -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_ShowTextInput(inputRect: *mut SDL_Rect);
+}
+extern "C" {
+    pub fn Android_JNI_HideTextInput();
+}
+extern "C" {
+    pub fn Android_JNI_IsScreenKeyboardShown() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_GetNativeWindow() -> *mut ANativeWindow;
+}
+extern "C" {
+    pub fn Android_JNI_GetDisplayOrientation() -> SDL_DisplayOrientation;
+}
+extern "C" {
+    pub fn Android_JNI_GetDisplayDPI(
+        ddpi: *mut f32,
+        xdpi: *mut f32,
+        ydpi: *mut f32,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_OpenAudioDevice(
+        iscapture: libc::c_int,
+        spec: *mut SDL_AudioSpec,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_GetAudioBuffer() -> *mut libc::c_void;
+}
+extern "C" {
+    pub fn Android_JNI_WriteAudioBuffer();
+}
+extern "C" {
+    pub fn Android_JNI_CaptureAudioBuffer(
+        buffer: *mut libc::c_void,
+        buflen: libc::c_int,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_FlushCapturedAudio();
+}
+extern "C" {
+    pub fn Android_JNI_CloseAudioDevice(iscapture: libc::c_int);
+}
+extern "C" {
+    pub fn Android_JNI_AudioSetThreadPriority(
+        iscapture: libc::c_int,
+        device_id: libc::c_int,
+    );
+}
+extern "C" {
+    pub fn Android_IsDeXMode() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_IsChromebook() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_FileOpen(
+        ctx: *mut SDL_RWops,
+        fileName: *const libc::c_char,
+        mode: *const libc::c_char,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_FileSize(ctx: *mut SDL_RWops) -> Sint64;
+}
+extern "C" {
+    pub fn Android_JNI_FileSeek(
+        ctx: *mut SDL_RWops,
+        offset: Sint64,
+        whence: libc::c_int,
+    ) -> Sint64;
+}
+extern "C" {
+    pub fn Android_JNI_FileRead(
+        ctx: *mut SDL_RWops,
+        buffer: *mut libc::c_void,
+        size: usize,
+        maxnum: usize,
+    ) -> usize;
+}
+extern "C" {
+    pub fn Android_JNI_FileWrite(
+        ctx: *mut SDL_RWops,
+        buffer: *const libc::c_void,
+        size: usize,
+        num: usize,
+    ) -> usize;
+}
+extern "C" {
+    pub fn Android_JNI_FileClose(ctx: *mut SDL_RWops) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_GetManifestEnvironmentVariables();
+}
+extern "C" {
+    pub fn Android_JNI_SetClipboardText(
+        text: *const libc::c_char,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_GetClipboardText() -> *mut libc::c_char;
+}
+extern "C" {
+    pub fn Android_JNI_HasClipboardText() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_GetPowerInfo(
+        plugged: *mut libc::c_int,
+        charged: *mut libc::c_int,
+        battery: *mut libc::c_int,
+        seconds: *mut libc::c_int,
+        percent: *mut libc::c_int,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_PollInputDevices();
+}
+extern "C" {
+    pub fn Android_JNI_PollHapticDevices();
+}
+extern "C" {
+    pub fn Android_JNI_HapticRun(
+        device_id: libc::c_int,
+        intensity: f32,
+        length: libc::c_int,
+    );
+}
+extern "C" {
+    pub fn Android_JNI_HapticStop(device_id: libc::c_int);
+}
+extern "C" {
+    pub fn Android_JNI_SuspendScreenSaver(suspend: SDL_bool);
+}
+extern "C" {
+    pub fn Android_JNI_InitTouch();
+}
+extern "C" {
+    pub fn Android_JNI_GetEnv() -> *mut libc::c_void; //JNIEnv;
+}
+extern "C" {
+    pub fn Android_JNI_SetupThread() -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_GetLocale(
+        buf: *mut libc::c_char,
+        buflen: usize,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_SendMessage(
+        command: libc::c_int,
+        param: libc::c_int,
+    ) -> libc::c_int;
+}
+
+extern "C" {
+    pub fn Android_JNI_ShowMessageBox(
+        messageboxdata: *const SDL_MessageBoxData,
+        buttonid: *mut libc::c_int,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_CreateCustomCursor(
+        surface: *mut SDL_Surface,
+        hot_x: libc::c_int,
+        hot_y: libc::c_int,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_DestroyCustomCursor(cursorID: libc::c_int);
+}
+extern "C" {
+    pub fn Android_JNI_SetCustomCursor(cursorID: libc::c_int) -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_SetSystemCursor(cursorID: libc::c_int) -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_SupportsRelativeMouse() -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_SetRelativeMouseEnabled(enabled: SDL_bool) -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_RequestPermission(permission: *const libc::c_char) -> SDL_bool;
+}
+extern "C" {
+    pub fn Android_JNI_ShowToast(
+        message: *const libc::c_char,
+        duration: libc::c_int,
+        gravity: libc::c_int,
+        xOffset: libc::c_int,
+        yOffset: libc::c_int,
+    ) -> libc::c_int;
+}
+extern "C" {
+    pub fn Android_JNI_OpenURL(url: *const libc::c_char) -> libc::c_int;
+}
