@@ -45,7 +45,7 @@
 //! }
 //! ```
 
-#![crate_name = "sdl2"]
+#![crate_name = "sdl2-android"]
 #![crate_type = "lib"]
 #![allow(clippy::cast_lossless, clippy::transmute_ptr_to_ref)]
 
