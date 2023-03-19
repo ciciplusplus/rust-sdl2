@@ -1,5 +1,5 @@
 [package]
-name = "sdl2"
+name = "sdl2-android"
 description = "SDL2 bindings for Rust"
 repository = "https://github.com/ciciplusplus/rust-sdl2"
 documentation = "https://github.com/ciciplusplus/rust-sdl2/"
@@ -12,7 +12,7 @@ readme = "README.md"
 resolver = "2"
 
 [lib]
-name = "sdl2"
+name = "sdl2-android"
 path = "src/sdl2/lib.rs"
 
 [dependencies]
