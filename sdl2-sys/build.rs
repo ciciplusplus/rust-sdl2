@@ -509,13 +509,14 @@ fn main() {
 
     link_sdl2(target_os);
 
-    // Android builds shared libhidapi.so even for static builds.
-    #[cfg(all(
-        feature = "bundled",
-        any(not(feature = "static-link"), target_os = "android")
-    ))]
+    #[cfg(feature = "bundled")]
     {
-        copy_dynamic_libraries(&sdl2_compiled_path, target_os);
+        // Android builds shared libhidapi.so even for static builds.
+        // NOTE: do not use cfg(target_os == "...") in build.rs as it's host os in reality!
+        // https://users.rust-lang.org/t/target-cfg-target-os-android-or-ios-doesnt-work/41983/8
+        if cfg!(not(feature = "static-link")) || target_os == "android" {
+            copy_dynamic_libraries(&sdl2_compiled_path, target_os);
+        }
     }
 }
 
